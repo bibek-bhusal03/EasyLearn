@@ -1,13 +1,16 @@
 import React from 'react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
+import Card from "@/components/ui/card"
 
 export default function StudentLogin() {
   return (
     <div className="min-h-screen flex items-center justify-center p-8 bg-slate-50">
       <div className="w-full max-w-md">
-        <div className="p-6 bg-white border rounded-md shadow-sm">
-          <h1 className="text-2xl font-semibold text-slate-900 mb-4">Student Login</h1>
+        <Card>
+          <h1 className="text-2xl font-semibold text-slate-900 mb-4">
+            Student Login
+          </h1>
           <div className="space-y-3">
             <label className="block text-sm text-slate-600">Email</label>
             <Input placeholder="student@example.com" />
@@ -15,7 +18,7 @@ export default function StudentLogin() {
             <Input placeholder="••••••" type="password" />
             <Button className="w-full mt-2">Continue</Button>
           </div>
-        </div>
+        </Card>
       </div>
     </div>
   )

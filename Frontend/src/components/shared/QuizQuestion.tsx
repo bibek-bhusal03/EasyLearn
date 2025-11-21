@@ -1,10 +1,11 @@
 import React from 'react'
+import Card from "@/components/ui/card"
 
 export default function QuizQuestion({ q, onAnswer, selected }: { q: any; onAnswer: (i: number) => void; selected?: number | null }) {
   return (
-    <div className="p-4 bg-white border rounded-md space-y-3">
+    <Card>
       <div className="text-base font-medium text-slate-800">{q.text}</div>
-      <div className="space-y-2">
+      <div className="space-y-2 mt-2">
         {q.choices.map((c: string, i: number) => (
           <label key={i} className="flex items-center gap-3 cursor-pointer">
             <input
@@ -18,6 +19,6 @@ export default function QuizQuestion({ q, onAnswer, selected }: { q: any; onAnsw
           </label>
         ))}
       </div>
-    </div>
+    </Card>
   )
 }

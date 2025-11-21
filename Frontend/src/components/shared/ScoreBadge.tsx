@@ -1,11 +1,10 @@
 import React from 'react'
+import Badge from "@/components/ui/badge"
 
 export default function ScoreBadge({ score }: { score: number }) {
-  let cls = 'bg-amber-400 text-white'
-  if (score >= 85) cls = 'bg-green-500 text-white'
-  else if (score < 60) cls = 'bg-red-500 text-white'
+  let variant: "default" | "success" | "warning" | "danger" = "default"
+  if (score >= 85) variant = "success"
+  else if (score < 60) variant = "danger"
 
-  return (
-    <span className={`px-2 py-1 rounded-md text-sm font-semibold ${cls}`}>{score}%</span>
-  )
+  return <Badge variant={variant}>{score}%</Badge>
 }

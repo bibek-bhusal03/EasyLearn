@@ -13,6 +13,8 @@ import TeacherAnalytics from "./pages/teacher/StudentAnalytics"
 import AdminLogin from "./pages/admin/Login"
 import AdminDashboard from "./pages/admin/Dashboard"
 import AdminManage from "./pages/admin/ManageAccounts"
+import { ModeToggle } from "./components/mode-toggle"
+import Landing from "./pages/landing/Landing"
 
 function App() {
   return (
@@ -21,26 +23,29 @@ function App() {
         <header className="p-4 border-b bg-white">
           <div className="container mx-auto flex items-center justify-between">
             <div className="text-lg font-bold text-slate-900">EasyLearn</div>
-            <nav className="space-x-3">
-              <Link
-                to="/student/login"
-                className="text-sm text-slate-600 hover:text-slate-900"
-              >
-                Student
-              </Link>
-              <Link
-                to="/teacher/login"
-                className="text-sm text-slate-600 hover:text-slate-900"
-              >
-                Teacher
-              </Link>
-              <Link
-                to="/admin/login"
-                className="text-sm text-slate-600 hover:text-slate-900"
-              >
-                Admin
-              </Link>
-            </nav>
+            <div className="flex items-center gap-4">
+              <nav className="space-x-3 hidden sm:block">
+                <Link
+                  to="/student/login"
+                  className="text-sm text-slate-600 hover:text-slate-900"
+                >
+                  Student
+                </Link>
+                <Link
+                  to="/teacher/login"
+                  className="text-sm text-slate-600 hover:text-slate-900"
+                >
+                  Teacher
+                </Link>
+                <Link
+                  to="/admin/login"
+                  className="text-sm text-slate-600 hover:text-slate-900"
+                >
+                  Admin
+                </Link>
+              </nav>
+              <ModeToggle />
+            </div>
           </div>
         </header>
 
@@ -66,14 +71,7 @@ function App() {
             <Route path="/admin/manage" element={<AdminManage />} />
 
             {/* Default */}
-            <Route
-              path="/"
-              element={
-                <div className="p-8">
-                  Open the top nav and pick a role to preview screens.
-                </div>
-              }
-            />
+            <Route path="/" element={<Landing />} />
           </Routes>
         </main>
       </div>
