@@ -138,7 +138,7 @@ export default function TeacherDashboard() {
           </DialogContent>
         </Dialog>
 
-        <Card className="border-border/50 bg-card/50 backdrop-blur-sm">
+        {/* <Card className="border-border/50 bg-card/50 backdrop-blur-sm">
           <CardContent className="pt-6 h-20 flex items-center justify-center">
             <Link href="/teacher/quizzes" className="w-full">
               <Button
@@ -149,9 +149,9 @@ export default function TeacherDashboard() {
               </Button>
             </Link>
           </CardContent>
-        </Card>
+        </Card> */}
 
-        <Card className="border-border/50 bg-card/50 backdrop-blur-sm">
+        {/* <Card className="border-border/50 bg-card/50 backdrop-blur-sm">
           <CardContent className="pt-6 h-20 flex items-center justify-center">
             <Link href="/teacher/analytics" className="w-full">
               <Button
@@ -162,7 +162,7 @@ export default function TeacherDashboard() {
               </Button>
             </Link>
           </CardContent>
-        </Card>
+        </Card> */}
       </div>
 
       {/* Classes List */}
