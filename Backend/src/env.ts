@@ -5,7 +5,7 @@ dotenv.config();
 const envSchema = z.object({
   PORT: z.number(),
   WHITELISTED_ORIGINS: z.array(z.string()),
-  DATABASE_URL: z.string().min(1),
+  MONGODB_URI: z.string().min(1),
   GEMINI_API_KEY: z.string().min(1),
   auth: z.object({
     SALT_ROUNDS: z.number(),
@@ -32,7 +32,7 @@ type TEnv = z.infer<typeof envSchema>;
 const env: TEnv = {
   PORT: Number(process.env["PORT"]),
   WHITELISTED_ORIGINS: process.env["WHITELISTED_ORIGINS"]?.split(",") ?? [],
-  DATABASE_URL: process.env["DATABASE_URL"] || "",
+  MONGODB_URI: process.env["DATABASE_URL"] || "",
   GEMINI_API_KEY: process.env["GEMINI_API_KEY"],
   auth: {
     SALT_ROUNDS: Number(process.env["SALT_ROUNDS"]) || 10,
