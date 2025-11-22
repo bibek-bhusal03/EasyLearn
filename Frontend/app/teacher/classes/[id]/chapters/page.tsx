@@ -71,10 +71,10 @@ export default function ChaptersPage() {
   ])
 
   const [selectedChapter, setSelectedChapter] = useState<Chapter | null>(null)
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<{ title: string; description: string; content_type: "pdf" | "video" | "text" }>({
     title: "",
     description: "",
-    content_type: "pdf" as const,
+    content_type: "pdf",
   })
 
   const handleCreateChapter = async () => {

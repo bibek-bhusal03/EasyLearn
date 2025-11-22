@@ -51,19 +51,17 @@ export default function ChapterDetailPage() {
           <p className="text-muted-foreground">Chapter {chapter.order}</p>
         </div>
         <div className="flex gap-2">
-          <Button variant="outline" className="border-border/50 bg-transparent">
-            Edit Chapter
-          </Button>
+          
           <Link href={`/teacher/classes/${classId}/chapters/${chapterId}/pdf`}>
             <Button className="bg-primary hover:bg-primary/90">
               <span className="mr-2">📄</span>
-              Manage PDFs
+              Manage PDFs + Create Quiz
             </Button>
           </Link>
-          <Button className="bg-primary hover:bg-primary/90">
+          {/* <Button className="bg-primary hover:bg-primary/90">
             <span className="mr-2">+</span>
             Create Quiz
-          </Button>
+          </Button> */}
         </div>
       </div>
 
@@ -117,35 +115,13 @@ export default function ChapterDetailPage() {
             </div>
             <Dialog>
               <DialogTrigger asChild>
+                <Link href={`/teacher/classes/${classId}/chapters/${chapterId}/pdf`}>
                 <Button className="bg-primary hover:bg-primary/90">
                   <span className="mr-2">+</span>
                   New Quiz
-                </Button>
+                </Button></Link>
               </DialogTrigger>
-              <DialogContent>
-                <DialogHeader>
-                  <DialogTitle>Create Quiz for this Chapter</DialogTitle>
-                </DialogHeader>
-                <div className="space-y-4">
-                  <div className="space-y-2">
-                    <Label htmlFor="quizTitle">Quiz Title</Label>
-                    <Input
-                      id="quizTitle"
-                      placeholder="e.g., Solving Linear Equations"
-                      className="bg-background/50 border-border/50"
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="quizDifficulty">Difficulty</Label>
-                    <select className="w-full p-2 rounded-lg bg-background/50 border border-border/50 text-foreground">
-                      <option>Easy</option>
-                      <option>Medium</option>
-                      <option>Hard</option>
-                    </select>
-                  </div>
-                  <Button className="w-full bg-primary hover:bg-primary/90">Create Quiz</Button>
-                </div>
-              </DialogContent>
+             
             </Dialog>
           </div>
         </CardHeader>
@@ -166,7 +142,7 @@ export default function ChapterDetailPage() {
                   <div className="flex items-center gap-4">
                     <Badge variant="secondary">{quiz.difficulty}</Badge>
                     <Button variant="outline" size="sm" className="border-border/50 bg-transparent">
-                      Edit
+                    Review
                     </Button>
                   </div>
                 </div>
