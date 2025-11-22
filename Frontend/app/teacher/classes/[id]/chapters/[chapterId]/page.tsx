@@ -52,6 +52,7 @@ export default function ChapterDetailPage() {
         </div>
         <div className="flex gap-2">
 <<<<<<< HEAD
+<<<<<<< HEAD
           
           <Link href={`/teacher/classes/${classId}/chapters/${chapterId}/pdf`}>
             <Button className="bg-primary hover:bg-primary/90">
@@ -67,17 +68,24 @@ export default function ChapterDetailPage() {
           <Button variant="outline" className="border-border/50 bg-transparent">
             Edit Chapter
           </Button>
+=======
+          
+>>>>>>> d41bb30 (Update: Pdf upload section chaged)
           <Link href={`/teacher/classes/${classId}/chapters/${chapterId}/pdf`}>
             <Button className="bg-primary hover:bg-primary/90">
               <span className="mr-2">📄</span>
-              Manage PDFs
+              Manage PDFs + Create Quiz
             </Button>
           </Link>
-          <Button className="bg-primary hover:bg-primary/90">
+          {/* <Button className="bg-primary hover:bg-primary/90">
             <span className="mr-2">+</span>
             Create Quiz
+<<<<<<< HEAD
           </Button>
 >>>>>>> 12cd839 (feat: initialized ui)
+=======
+          </Button> */}
+>>>>>>> d41bb30 (Update: Pdf upload section chaged)
         </div>
       </div>
 
@@ -132,6 +140,7 @@ export default function ChapterDetailPage() {
             <Dialog>
               <DialogTrigger asChild>
 <<<<<<< HEAD
+<<<<<<< HEAD
                 <Link href={`/teacher/classes/${classId}/chapters/${chapterId}/pdf`}>
                 <Button className="bg-primary hover:bg-primary/90">
                   <span className="mr-2">+</span>
@@ -140,11 +149,15 @@ export default function ChapterDetailPage() {
               </DialogTrigger>
              
 =======
+=======
+                <Link href={`/teacher/classes/${classId}/chapters/${chapterId}/pdf`}>
+>>>>>>> d41bb30 (Update: Pdf upload section chaged)
                 <Button className="bg-primary hover:bg-primary/90">
                   <span className="mr-2">+</span>
                   New Quiz
-                </Button>
+                </Button></Link>
               </DialogTrigger>
+<<<<<<< HEAD
               <DialogContent>
                 <DialogHeader>
                   <DialogTitle>Create Quiz for this Chapter</DialogTitle>
@@ -170,6 +183,9 @@ export default function ChapterDetailPage() {
                 </div>
               </DialogContent>
 >>>>>>> 12cd839 (feat: initialized ui)
+=======
+             
+>>>>>>> d41bb30 (Update: Pdf upload section chaged)
             </Dialog>
           </div>
         </CardHeader>
@@ -191,10 +207,14 @@ export default function ChapterDetailPage() {
                     <Badge variant="secondary">{quiz.difficulty}</Badge>
                     <Button variant="outline" size="sm" className="border-border/50 bg-transparent">
 <<<<<<< HEAD
+<<<<<<< HEAD
                     Review
 =======
                       Edit
 >>>>>>> 12cd839 (feat: initialized ui)
+=======
+                    Review
+>>>>>>> d41bb30 (Update: Pdf upload section chaged)
                     </Button>
                   </div>
                 </div>

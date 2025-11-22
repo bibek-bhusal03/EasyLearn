@@ -14,10 +14,14 @@ export default function AuthPage() {
           </svg>
         </div>
 <<<<<<< HEAD
+<<<<<<< HEAD
         <h1 className="text-2xl font-bold text-foreground mb-2">EasyLearn</h1>
 =======
         <h1 className="text-2xl font-bold text-foreground mb-2">EasyLearn AI</h1>
 >>>>>>> 12cd839 (feat: initialized ui)
+=======
+        <h1 className="text-2xl font-bold text-foreground mb-2">EasyLearn</h1>
+>>>>>>> d41bb30 (Update: Pdf upload section chaged)
         <p className="text-muted-foreground">Intelligent learning, simplified</p>
       </div>
 
