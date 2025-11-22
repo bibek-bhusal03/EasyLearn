@@ -110,6 +110,18 @@ TeamLCCElite
 
 ## 🎥 **Demo**
 
+
+App demo
+
+<video controls src="exportVideo2025-11-22 081746.mp4" title="Title"></video>
+
+Project ss
+
+
+![alt text](IMG_0657.png)
+
+![alt text](IMG_0663.png) ![alt text](IMG_0658.png) ![alt text](IMG_0659.png) ![alt text](IMG_0660.png) ![alt text](IMG_0661.png) ![alt text](IMG_0662.png)
+
 ### **🔗 Live Demo (Frontend)**
 
 **https://your-demo-link.com**
