@@ -18,6 +18,19 @@ try {
 } catch (configError) {
     console.error("[ERROR] Failed to configure Cloudinary:", configError.message);
 }
+// export  const cloudinaryConfig=   cloudinary.config({
+//         cloud_name: CLOUD_NAME,
+//         api_key: API_KEY,
+//         api_secret: API_SECRET,
+//         secure: true, 
+//     });
+// export const getSignedUrl = async (publicId: string): Promise<string> => {
+//     return await cloudinary.url(publicId, {
+//         resource_type: 'raw',
+//         secure: true,
+//         format: 'pdf',
+//     });
+// }
 
 /**
  * Uploads a file buffer using the streaming method to Cloudinary.
@@ -42,7 +55,7 @@ export const uploadBufferToCloudinary = (buffer: Buffer, folder = 'uploads'): Pr
     return new Promise((resolve, reject) => {
         const uploadOptions: UploadApiOptions = {
             folder: folder,
-            resource_type: 'auto' 
+            resource_type: 'raw' 
         };
 
         const uploadStream = cloudinary.uploader.upload_stream(

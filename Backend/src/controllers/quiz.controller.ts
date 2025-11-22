@@ -1,9 +1,9 @@
 import { Request, Response } from 'express'
 import axios from 'axios'
 import { UploadedPDF } from '../model/UploadPdfs'
-import { Quiz } from '../models/Quiz'
+import { Quiz } from '../model/Quiz'
 
-import { generateQuizFromPDF } from '../utils/quizGenerator' // ← your working function
+import {  generateQuizFromPDF } from '../utils/generateQuestion'
 
 export const generateQuiz = async (req: Request, res: Response) => {
   try {
@@ -13,32 +13,31 @@ export const generateQuiz = async (req: Request, res: Response) => {
       return res.status(400).json({ error: 'pdfId is required' })
     }
 
-    // 1. Find the uploaded PDF
     const pdfDoc = await UploadedPDF.findById(pdfId)
     if (!pdfDoc) {
       return res.status(404).json({ error: 'PDF not found' })
     }
 
-    // 2. Download PDF from Cloudinary
-    const response = await axios.get(pdfDoc.cloudinaryUrl, {
+      const response = await axios.get(pdfDoc.cloudinaryUrl, {
       responseType: 'arraybuffer',
     })
-    const pdfBuffer = Buffer.from(response.data)
+        if(!response || response.status !== 200)
+        {
+                   console.error('cloudinary fetch error', response.statusText, response.data)  
+        }
 
-    // 3. Call YOUR existing working function
+                const pdfBuffer = Buffer.from(response.data)
     const rawQuestions = await generateQuizFromPDF(pdfBuffer, {
       numQuestions: Number(numQuestions),
-      difficulty: difficulty as 'easy' | 'medium' | 'hard',
+    //   difficulty: difficulty as 'easy' | 'medium' | 'hard',
     })
 
-    // 4. Filter only MCQs (as agreed)
     const mcqQuestions = rawQuestions.filter((q: any) => q.type === 'mcq')
 
     if (mcqQuestions.length === 0) {
       return res.status(500).json({ error: 'No MCQs generated. Try again.' })
     }
 
-    // 5. Save as draft quiz
     const quiz = await Quiz.create({
       title: `Quiz from ${pdfDoc.fileName || 'Untitled PDF'}`,
       questions: mcqQuestions,
@@ -52,8 +51,8 @@ export const generateQuiz = async (req: Request, res: Response) => {
       quizId: quiz._id.toString(),
       title: quiz.title,
       questionCount: quiz.questionCount,
-      preview: mcqQuestions.slice(0, 3), // show first 3
-      questions: mcqQuestions, // full list (teacher sees answers)
+      preview: mcqQuestions.slice(0, 3),
+      questions: mcqQuestions,
     })
   } catch (error: any) {
     console.error('Quiz generation error:', error)
