@@ -28,29 +28,13 @@ export default function StudentLayout({
       {/* Header */}
       <header className="border-b border-border/50 bg-card/30 backdrop-blur-sm sticky top-0 z-40">
         <div className="flex items-center justify-between px-6 py-4">
-<<<<<<< HEAD
-<<<<<<< HEAD
           <Link href="/" className="flex items-center gap-2">
-=======
-          <Link href="/student/dashboard" className="flex items-center gap-2">
->>>>>>> 12cd839 (feat: initialized ui)
-=======
-          <Link href="/" className="flex items-center gap-2">
->>>>>>> d41bb30 (Update: Pdf upload section chaged)
             <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
               <svg className="w-5 h-5 text-primary-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
               </svg>
             </div>
-<<<<<<< HEAD
-<<<<<<< HEAD
-            <span className="font-bold text-foreground hidden sm:inline">EasyLearn </span>
-=======
-            <span className="font-bold text-foreground hidden sm:inline">EasyLearn AI</span>
->>>>>>> 12cd839 (feat: initialized ui)
-=======
-            <span className="font-bold text-foreground hidden sm:inline">EasyLearn </span>
->>>>>>> c2fc869 (designedit: dashboard edited)
+            <span className="font-bold text-foreground hidden sm:inline">EasyLearn</span>
           </Link>
 
           {/* Desktop Navigation */}

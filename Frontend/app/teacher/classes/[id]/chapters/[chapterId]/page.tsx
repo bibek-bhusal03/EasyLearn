@@ -2,21 +2,15 @@
 
 import { useState } from "react"
 import Link from "next/link"
-import { useParams, useRouter } from "next/navigation"
+import { useParams } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { useToast } from "@/hooks/use-toast"
 import { Badge } from "@/components/ui/badge"
 
 export default function ChapterDetailPage() {
   const params = useParams()
-  const router = useRouter()
   const classId = params.id as string
   const chapterId = params.chapterId as string
-  const { toast } = useToast()
 
   const [chapter] = useState({
     id: chapterId,
@@ -51,41 +45,12 @@ export default function ChapterDetailPage() {
           <p className="text-muted-foreground">Chapter {chapter.order}</p>
         </div>
         <div className="flex gap-2">
-<<<<<<< HEAD
-<<<<<<< HEAD
-          
           <Link href={`/teacher/classes/${classId}/chapters/${chapterId}/pdf`}>
             <Button className="bg-primary hover:bg-primary/90">
               <span className="mr-2">📄</span>
               Manage PDFs + Create Quiz
             </Button>
           </Link>
-          {/* <Button className="bg-primary hover:bg-primary/90">
-            <span className="mr-2">+</span>
-            Create Quiz
-          </Button> */}
-=======
-          <Button variant="outline" className="border-border/50 bg-transparent">
-            Edit Chapter
-          </Button>
-=======
-          
->>>>>>> d41bb30 (Update: Pdf upload section chaged)
-          <Link href={`/teacher/classes/${classId}/chapters/${chapterId}/pdf`}>
-            <Button className="bg-primary hover:bg-primary/90">
-              <span className="mr-2">📄</span>
-              Manage PDFs + Create Quiz
-            </Button>
-          </Link>
-          {/* <Button className="bg-primary hover:bg-primary/90">
-            <span className="mr-2">+</span>
-            Create Quiz
-<<<<<<< HEAD
-          </Button>
->>>>>>> 12cd839 (feat: initialized ui)
-=======
-          </Button> */}
->>>>>>> d41bb30 (Update: Pdf upload section chaged)
         </div>
       </div>
 
@@ -137,56 +102,12 @@ export default function ChapterDetailPage() {
               <CardTitle>Associated Quizzes</CardTitle>
               <CardDescription>Quizzes created for this chapter</CardDescription>
             </div>
-            <Dialog>
-              <DialogTrigger asChild>
-<<<<<<< HEAD
-<<<<<<< HEAD
-                <Link href={`/teacher/classes/${classId}/chapters/${chapterId}/pdf`}>
-                <Button className="bg-primary hover:bg-primary/90">
-                  <span className="mr-2">+</span>
-                  New Quiz
-                </Button></Link>
-              </DialogTrigger>
-             
-=======
-=======
-                <Link href={`/teacher/classes/${classId}/chapters/${chapterId}/pdf`}>
->>>>>>> d41bb30 (Update: Pdf upload section chaged)
-                <Button className="bg-primary hover:bg-primary/90">
-                  <span className="mr-2">+</span>
-                  New Quiz
-                </Button></Link>
-              </DialogTrigger>
-<<<<<<< HEAD
-              <DialogContent>
-                <DialogHeader>
-                  <DialogTitle>Create Quiz for this Chapter</DialogTitle>
-                </DialogHeader>
-                <div className="space-y-4">
-                  <div className="space-y-2">
-                    <Label htmlFor="quizTitle">Quiz Title</Label>
-                    <Input
-                      id="quizTitle"
-                      placeholder="e.g., Solving Linear Equations"
-                      className="bg-background/50 border-border/50"
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="quizDifficulty">Difficulty</Label>
-                    <select className="w-full p-2 rounded-lg bg-background/50 border border-border/50 text-foreground">
-                      <option>Easy</option>
-                      <option>Medium</option>
-                      <option>Hard</option>
-                    </select>
-                  </div>
-                  <Button className="w-full bg-primary hover:bg-primary/90">Create Quiz</Button>
-                </div>
-              </DialogContent>
->>>>>>> 12cd839 (feat: initialized ui)
-=======
-             
->>>>>>> d41bb30 (Update: Pdf upload section chaged)
-            </Dialog>
+            <Link href={`/teacher/classes/${classId}/chapters/${chapterId}/pdf`}>
+              <Button className="bg-primary hover:bg-primary/90">
+                <span className="mr-2">+</span>
+                New Quiz
+              </Button>
+            </Link>
           </div>
         </CardHeader>
         <CardContent>
@@ -206,15 +127,7 @@ export default function ChapterDetailPage() {
                   <div className="flex items-center gap-4">
                     <Badge variant="secondary">{quiz.difficulty}</Badge>
                     <Button variant="outline" size="sm" className="border-border/50 bg-transparent">
-<<<<<<< HEAD
-<<<<<<< HEAD
-                    Review
-=======
-                      Edit
->>>>>>> 12cd839 (feat: initialized ui)
-=======
-                    Review
->>>>>>> d41bb30 (Update: Pdf upload section chaged)
+                      Review
                     </Button>
                   </div>
                 </div>

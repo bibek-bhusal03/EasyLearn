@@ -145,6 +145,10 @@ Screenshot of Web Platform
 
 ---
 
+Canva link : https://www.canva.com/design/DAG5Fok3S0w/o8kL4BLZsiuWnDZrlNeh4g/edit?utm_content=DAG5Fok3S0w&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
+
+
+
 ## 🧠 **Tech Stack**
 
 ### **Frontend**
