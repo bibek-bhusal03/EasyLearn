@@ -6,8 +6,11 @@ import { useState } from "react"
 import Link from "next/link"
 import { useParams } from "next/navigation"
 import { Button } from "@/components/ui/button"
+<<<<<<< HEAD
 import { Dialog, DialogTrigger, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter, DialogClose } from "@/components/ui/dialog"
 import { Input } from "@/components/ui/input"
+=======
+>>>>>>> 12cd839 (feat: initialized ui)
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
 import { useToast } from "@/hooks/use-toast"
 import { Badge } from "@/components/ui/badge"
@@ -32,11 +35,14 @@ export default function PDFManagementPage() {
   const [selectedFile, setSelectedFile] = useState<File | null>(null)
   const [uploadProgress, setUploadProgress] = useState(0)
   const [isUploading, setIsUploading] = useState(false)
+<<<<<<< HEAD
     const [isDialogOpen, setIsDialogOpen] = useState(false)
     const [dialogFile, setDialogFile] = useState<File | null>(null)
     const [dialogName, setDialogName] = useState<string>("")
     const [dialogUploading, setDialogUploading] = useState(false)
     const [dialogProgress, setDialogProgress] = useState(0)
+=======
+>>>>>>> 12cd839 (feat: initialized ui)
   const [dragActive, setDragActive] = useState(false)
 
   const [uploadedPDFs, setUploadedPDFs] = useState<PDFFile[]>([
@@ -151,12 +157,17 @@ export default function PDFManagementPage() {
 
         {/* Upload Tab */}
         <TabsContent value="upload" className="space-y-6">
+<<<<<<< HEAD
           <Card className="border-border/50 bg-card/50 backdrop-blur-sm cursor-pointer">
+=======
+          <Card className="border-border/50 bg-card/50 backdrop-blur-sm">
+>>>>>>> 12cd839 (feat: initialized ui)
             <CardHeader>
               <CardTitle>Upload New PDF</CardTitle>
               <CardDescription>Add a PDF file to this chapter</CardDescription>
             </CardHeader>
             <CardContent className="space-y-6">
+<<<<<<< HEAD
                             <div className="flex flex-col items-center justify-center text-center space-y-4 py-8">
                               <p className="text-lg font-semibold text-foreground">Upload your files here</p>
                               <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
@@ -272,6 +283,33 @@ export default function PDFManagementPage() {
                             </div>
               {/* Drag and Drop Zone */}
              
+=======
+              {/* Drag and Drop Zone */}
+              <div
+                onDragEnter={handleDrag}
+                onDragLeave={handleDrag}
+                onDragOver={handleDrag}
+                onDrop={handleDrop}
+                className={`border-2 border-dashed rounded-lg p-8 text-center transition-colors ${
+                  dragActive ? "border-primary bg-primary/10" : "border-border/50 bg-background/30"
+                }`}
+              >
+                <div className="space-y-4">
+                  <div className="text-4xl">📄</div>
+                  <div>
+                    <p className="font-semibold text-foreground">Drag and drop your PDF here</p>
+                    <p className="text-sm text-muted-foreground">or click to browse</p>
+                  </div>
+                  <label>
+                    <input type="file" accept=".pdf" onChange={handleFileSelect} className="hidden" />
+                    <Button variant="outline" className="border-border/50 cursor-pointer bg-transparent">
+                      Browse Files
+                    </Button>
+                  </label>
+                </div>
+              </div>
+
+>>>>>>> 12cd839 (feat: initialized ui)
               {/* Selected File Preview */}
               {selectedFile && (
                 <div className="p-4 rounded-lg bg-background/50 border border-border/50 space-y-4">
@@ -401,7 +439,21 @@ export default function PDFManagementPage() {
                       </div>
                     </div>
                     <div className="flex items-center gap-3">
+<<<<<<< HEAD
                      
+=======
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        onClick={() => {
+                          setUploadedPDFs([...uploadedPDFs, pdf])
+                          toast({ title: "Success", description: "PDF added to chapter" })
+                        }}
+                        className="border-border/50"
+                      >
+                        Add to Chapter
+                      </Button>
+>>>>>>> 12cd839 (feat: initialized ui)
                       <Link href={`/teacher/classes/${classId}/chapters/${chapterId}/quiz/generate?pdf=${pdf.id}`}>
                         <Button variant="outline" size="sm" className="border-border/50 bg-transparent">
                           Generate Quiz

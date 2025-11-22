@@ -13,7 +13,11 @@ export default function AuthPage() {
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
           </svg>
         </div>
+<<<<<<< HEAD
         <h1 className="text-2xl font-bold text-foreground mb-2">EasyLearn</h1>
+=======
+        <h1 className="text-2xl font-bold text-foreground mb-2">EasyLearn AI</h1>
+>>>>>>> 12cd839 (feat: initialized ui)
         <p className="text-muted-foreground">Intelligent learning, simplified</p>
       </div>
 

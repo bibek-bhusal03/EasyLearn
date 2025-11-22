@@ -8,7 +8,11 @@ const _geist = Geist({ subsets: ["latin"] })
 const _geistMono = Geist_Mono({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
+<<<<<<< HEAD
   title: "EasyLearn - Intelligent Learning Platform",
+=======
+  title: "EasyLearn AI - Intelligent Learning Platform",
+>>>>>>> 12cd839 (feat: initialized ui)
   description: "Create, teach, and learn with AI-powered educational tools",
   generator: "v0.app",
   icons: {
