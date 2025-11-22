@@ -1,51 +1,76 @@
 import { PDFLoader } from "@langchain/community/document_loaders/fs/pdf";
 import { ChatGoogleGenerativeAI } from "@langchain/google-genai";
 import { env } from "../env";
+import fs from "fs";
+import os from "os";
+import path from "path";
 
-export async function generateQuestionsFromPDF(pdfPath: string): Promise<any[]> {
-  console.log("Loading PDF:", pdfPath);
+export async function generateQuizFromPDF(
+  pdfBuffer: Buffer,                     
+  options: { numQuestions?: number } = {}
+): Promise<any[]> {
+  const numQuestions = options.numQuestions || 10;
 
-  const loader = new PDFLoader(pdfPath);
-  const docs = await loader.load();
-  const text = docs.map(d => d.pageContent).join("\n\n");
+  const tempPath = path.join(os.tmpdir(), `quiz-${Date.now()}.pdf`);
+  fs.writeFileSync(tempPath, pdfBuffer);
 
-  console.log("PDF loaded, sending to Gemini...");
+  try {
+    console.log("Loading PDF from temp file...");
+    const loader = new PDFLoader(tempPath);
+    const docs = await loader.load();
+    const text = docs.map(d => d.pageContent).join("\n\n");
 
-  const llm = new ChatGoogleGenerativeAI({
-    // model: "gemini-1.5-flash",
-    model: "gemini-2.5-flash",
-    temperature: 0.3,
-    apiKey: env.GEMINI_API_KEY,
-  });
+    const llm = new ChatGoogleGenerativeAI({
+      model: "gemini-2.5-flash",       
+      temperature: 0.3,
+      apiKey: env.GEMINI_API_KEY,
+    });
 
-  const prompt = `Generate exactly 10 quiz questions from the following chapter.
+    const prompt = `Generate EXACTLY ${numQuestions} multiple-choice questions (MCQ only) from the text below.
 
 Rules:
-- 3 MCQ (4 options, single correct)
-- 3 True/False
-- 2 Fill in the blanks
-- 2 Short answer
+- Only MCQ
+- Exactly 4 options
+- Exactly one correct answer
+- Return ONLY a valid JSON array — no markdown, no explanations, no extra text
 
-Return ONLY a valid JSON array. No markdown, no extra text.
+Format of each question:
+{
+  "type": "mcq",
+  "question": "Your question here?",
+  ",还options": ["A) ...", "B) ...", "C) ...", "D) ..."],
+  "correct_answer": "B) ..."
+}
 
-Chapter content:
+Text:
 ${text}
 
 Return only the JSON array now:`;
 
-  const response = await llm.invoke(prompt);
+    const response = await llm.invoke(prompt);
+    const raw = (response as any).content || response.toString();
 
-  const raw = (response as any).content || response.toString();
-  console.log('debug raw ............', raw)
+    console.log('Raw Gemini output:', raw);
 
-  const clean = raw.replace(/```json/gi, "").replace(/```/gi, "").trim();
+    const clean = raw.replace(/```json/gi, "").replace(/```/gi, "").trim();
 
-  try {
-    const questions = JSON.parse(clean);
-    console.log(`Success! Generated ${questions.length} questions`);
-    return questions;
-  } catch (e) {
-    console.log("\nGemini returned junk:\n", raw);
-    throw new Error("Invalid JSON from Gemini");
+    let questions;
+    try {
+      questions = JSON.parse(clean);
+    } catch (e) {
+      console.log("Gemini gave invalid JSON:", raw);
+      throw new Error("Invalid JSON from Gemini");
+    }
+
+    // Filter only real MCQs (safety)
+    const mcqs = questions
+      .filter((q: any) => q.type === "mcq" && Array.isArray(q.options) && q.options.length === 4)
+      .slice(0, numQuestions);
+
+    console.log(`Success! Generated ${mcqs.length} clean MCQs`);
+    return mcqs;
+
+  } finally {
+    try { fs.unlinkSync(tempPath); } catch {}
   }
 }
