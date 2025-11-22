@@ -34,7 +34,7 @@ export default function StudentLayout({
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
               </svg>
             </div>
-            <span className="font-bold text-foreground hidden sm:inline">EasyLearn </span>
+            <span className="font-bold text-foreground hidden sm:inline">EasyLearn AI</span>
           </Link>
 
           {/* Desktop Navigation */}
