@@ -4,7 +4,7 @@ import dotenv from 'dotenv';
 import uploadRoutes from "./routes/upload.routes";
 import quizRoutes from "./routes/quiz.routes";
 import { connectDB } from './lib/db';
-
+import { getAllPDFs } from './controllers/pdf.controller'
 dotenv.config();
 
 const app = express();
@@ -13,8 +13,11 @@ connectDB()
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+//Routes
 app.use('/upload', uploadRoutes);
 app.use('/quizzes', quizRoutes)
+app.use('/getPdfs', getAllPDFs)   
 
 app.get('/', (req, res) => {
   res.json({
