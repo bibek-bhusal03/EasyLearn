@@ -126,19 +126,7 @@ Project ss of APP ( STUDEND SIDE )
 
 Screenshot of Web Platform 
 
-![alt text](image.png)
 
-![alt text](<Screenshot 2025-11-22 at 08.41.26.png>)
-![alt text](<Screenshot 2025-11-22 at 08.41.33.png>)
-![alt text](<Screenshot 2025-11-22 at 08.43.11.png>)
-![alt text](<Screenshot 2025-11-22 at 08.43.19.png>)
-![alt text](<Screenshot 2025-11-22 at 08.43.26.png>)
-![alt text](<Screenshot 2025-11-22 at 08.43.35.png>)
-
-![alt text](<Screenshot 2025-11-22 at 08.44.16.png>)
-![alt text](<Screenshot 2025-11-22 at 08.44.32.png>)
-![alt text](<Screenshot 2025-11-22 at 08.44.22.png>)
-![alt text](<Screenshot 2025-11-22 at 08.45.30.png>)
 ### **🔗 Live Demo (Frontend)**
 
 **https://your-demo-link.com**
