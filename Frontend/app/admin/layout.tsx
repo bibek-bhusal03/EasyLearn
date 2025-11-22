@@ -34,15 +34,7 @@ export default function AdminLayout({
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
               </svg>
             </div>
-<<<<<<< HEAD
-<<<<<<< HEAD
             <span className="font-bold text-foreground hidden sm:inline">EasyLearn</span>
-=======
-            <span className="font-bold text-foreground hidden sm:inline">EasyLearn AI</span>
->>>>>>> 12cd839 (feat: initialized ui)
-=======
-            <span className="font-bold text-foreground hidden sm:inline">EasyLearn</span>
->>>>>>> c2fc869 (designedit: dashboard edited)
           </Link>
 
           {/* Desktop Navigation */}

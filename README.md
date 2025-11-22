@@ -115,13 +115,30 @@ App demo
 
 <video controls src="exportVideo2025-11-22 081746.mp4" title="Title"></video>
 
-Project ss
+Project ss of APP ( STUDEND SIDE )
 
 
 ![alt text](IMG_0657.png)
 
 ![alt text](IMG_0663.png) ![alt text](IMG_0658.png) ![alt text](IMG_0659.png) ![alt text](IMG_0660.png) ![alt text](IMG_0661.png) ![alt text](IMG_0662.png)
 
+
+
+Screenshot of Web Platform 
+
+![alt text](image.png)
+
+![alt text](<Screenshot 2025-11-22 at 08.41.26.png>)
+![alt text](<Screenshot 2025-11-22 at 08.41.33.png>)
+![alt text](<Screenshot 2025-11-22 at 08.43.11.png>)
+![alt text](<Screenshot 2025-11-22 at 08.43.19.png>)
+![alt text](<Screenshot 2025-11-22 at 08.43.26.png>)
+![alt text](<Screenshot 2025-11-22 at 08.43.35.png>)
+
+![alt text](<Screenshot 2025-11-22 at 08.44.16.png>)
+![alt text](<Screenshot 2025-11-22 at 08.44.32.png>)
+![alt text](<Screenshot 2025-11-22 at 08.44.22.png>)
+![alt text](<Screenshot 2025-11-22 at 08.45.30.png>)
 ### **🔗 Live Demo (Frontend)**
 
 **https://your-demo-link.com**
