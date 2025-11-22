@@ -138,7 +138,15 @@ export default function TeacherDashboard() {
           </DialogContent>
         </Dialog>
 
+<<<<<<< HEAD
+<<<<<<< HEAD
         {/* <Card className="border-border/50 bg-card/50 backdrop-blur-sm">
+=======
+        <Card className="border-border/50 bg-card/50 backdrop-blur-sm">
+>>>>>>> 12cd839 (feat: initialized ui)
+=======
+        {/* <Card className="border-border/50 bg-card/50 backdrop-blur-sm">
+>>>>>>> c2fc869 (designedit: dashboard edited)
           <CardContent className="pt-6 h-20 flex items-center justify-center">
             <Link href="/teacher/quizzes" className="w-full">
               <Button
@@ -149,9 +157,21 @@ export default function TeacherDashboard() {
               </Button>
             </Link>
           </CardContent>
+<<<<<<< HEAD
+<<<<<<< HEAD
         </Card> */}
 
         {/* <Card className="border-border/50 bg-card/50 backdrop-blur-sm">
+=======
+        </Card>
+
+        <Card className="border-border/50 bg-card/50 backdrop-blur-sm">
+>>>>>>> 12cd839 (feat: initialized ui)
+=======
+        </Card> */}
+
+        {/* <Card className="border-border/50 bg-card/50 backdrop-blur-sm">
+>>>>>>> c2fc869 (designedit: dashboard edited)
           <CardContent className="pt-6 h-20 flex items-center justify-center">
             <Link href="/teacher/analytics" className="w-full">
               <Button
@@ -162,7 +182,15 @@ export default function TeacherDashboard() {
               </Button>
             </Link>
           </CardContent>
+<<<<<<< HEAD
+<<<<<<< HEAD
         </Card> */}
+=======
+        </Card>
+>>>>>>> 12cd839 (feat: initialized ui)
+=======
+        </Card> */}
+>>>>>>> c2fc869 (designedit: dashboard edited)
       </div>
 
       {/* Classes List */}

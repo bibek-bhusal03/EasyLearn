@@ -71,10 +71,24 @@ export default function ChaptersPage() {
   ])
 
   const [selectedChapter, setSelectedChapter] = useState<Chapter | null>(null)
+<<<<<<< HEAD
+<<<<<<< HEAD
   const [formData, setFormData] = useState<{ title: string; description: string; content_type: "pdf" | "video" | "text" }>({
     title: "",
     description: "",
     content_type: "pdf",
+=======
+  const [formData, setFormData] = useState({
+    title: "",
+    description: "",
+    content_type: "pdf" as const,
+>>>>>>> 12cd839 (feat: initialized ui)
+=======
+  const [formData, setFormData] = useState<{ title: string; description: string; content_type: "pdf" | "video" | "text" }>({
+    title: "",
+    description: "",
+    content_type: "pdf",
+>>>>>>> d41bb30 (Update: Pdf upload section chaged)
   })
 
   const handleCreateChapter = async () => {

@@ -7,8 +7,16 @@ import axios from "axios";
 import Link from "next/link"
 import { useParams } from "next/navigation"
 import { Button } from "@/components/ui/button"
+<<<<<<< HEAD
+<<<<<<< HEAD
 import { Dialog, DialogTrigger, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter, DialogClose } from "@/components/ui/dialog"
 import { Input } from "@/components/ui/input"
+=======
+>>>>>>> 12cd839 (feat: initialized ui)
+=======
+import { Dialog, DialogTrigger, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter, DialogClose } from "@/components/ui/dialog"
+import { Input } from "@/components/ui/input"
+>>>>>>> d41bb30 (Update: Pdf upload section chaged)
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
 import { useToast } from "@/hooks/use-toast"
 import { Badge } from "@/components/ui/badge"
@@ -33,11 +41,20 @@ export default function PDFManagementPage() {
   const [selectedFile, setSelectedFile] = useState<File | null>(null)
   const [uploadProgress, setUploadProgress] = useState(0)
   const [isUploading, setIsUploading] = useState(false)
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> d41bb30 (Update: Pdf upload section chaged)
     const [isDialogOpen, setIsDialogOpen] = useState(false)
     const [dialogFile, setDialogFile] = useState<File | null>(null)
     const [dialogName, setDialogName] = useState<string>("")
     const [dialogUploading, setDialogUploading] = useState(false)
     const [dialogProgress, setDialogProgress] = useState(0)
+<<<<<<< HEAD
+=======
+>>>>>>> 12cd839 (feat: initialized ui)
+=======
+>>>>>>> d41bb30 (Update: Pdf upload section chaged)
   const [dragActive, setDragActive] = useState(false)
 
   const [uploadedPDFs, setUploadedPDFs] = useState<PDFFile[]>([
@@ -188,12 +205,24 @@ export default function PDFManagementPage() {
 
         {/* Upload Tab */}
         <TabsContent value="upload" className="space-y-6">
+<<<<<<< HEAD
+<<<<<<< HEAD
           <Card className="border-border/50 bg-card/50 backdrop-blur-sm cursor-pointer">
+=======
+          <Card className="border-border/50 bg-card/50 backdrop-blur-sm">
+>>>>>>> 12cd839 (feat: initialized ui)
+=======
+          <Card className="border-border/50 bg-card/50 backdrop-blur-sm cursor-pointer">
+>>>>>>> d41bb30 (Update: Pdf upload section chaged)
             <CardHeader>
               <CardTitle>Upload New PDF</CardTitle>
               <CardDescription>Add a PDF file to this chapter</CardDescription>
             </CardHeader>
             <CardContent className="space-y-6">
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> d41bb30 (Update: Pdf upload section chaged)
                             <div className="flex flex-col items-center justify-center text-center space-y-4 py-8">
                               <p className="text-lg font-semibold text-foreground">Upload your files here</p>
                               <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
@@ -205,6 +234,7 @@ export default function PDFManagementPage() {
                                     <DialogTitle>Upload PDF</DialogTitle>
                                     <DialogDescription>Choose a file to upload</DialogDescription>
                                   </DialogHeader>
+<<<<<<< HEAD
 
                                   <div className="space-y-4 p-1 px-2 cursor-pointer hover:bg-gray-300 border rounded-2xl">
                                    
@@ -306,6 +336,136 @@ export default function PDFManagementPage() {
                             </div>
               {/* Drag and Drop Zone */}
              
+=======
+              {/* Drag and Drop Zone */}
+              <div
+                onDragEnter={handleDrag}
+                onDragLeave={handleDrag}
+                onDragOver={handleDrag}
+                onDrop={handleDrop}
+                className={`border-2 border-dashed rounded-lg p-8 text-center transition-colors ${
+                  dragActive ? "border-primary bg-primary/10" : "border-border/50 bg-background/30"
+                }`}
+              >
+                <div className="space-y-4">
+                  <div className="text-4xl">📄</div>
+                  <div>
+                    <p className="font-semibold text-foreground">Drag and drop your PDF here</p>
+                    <p className="text-sm text-muted-foreground">or click to browse</p>
+                  </div>
+                  <label>
+                    <input type="file" accept=".pdf" onChange={handleFileSelect} className="hidden" />
+                    <Button variant="outline" className="border-border/50 cursor-pointer bg-transparent">
+                      Browse Files
+                    </Button>
+                  </label>
+                </div>
+              </div>
+
+>>>>>>> 12cd839 (feat: initialized ui)
+=======
+
+                                  <div className="space-y-4 p-1 px-2 cursor-pointer hover:bg-gray-300 border rounded-2xl">
+                                   
+
+                                    <div>
+                                      <label className="text-sm font-medium text-foreground  ">Browse Files</label>
+                                      <input
+                                        type="file"
+                                        accept=".pdf"
+                                        onChange={(e) => {
+                                          const f = e.target.files ? e.target.files[0] : null
+                                          if (f && f.type === "application/pdf") {
+                                            setDialogFile(f)
+                                            if (!dialogName) setDialogName(f.name.replace(/\.pdf$/i, ""))
+                                            toast({ title: "Selected", description: f.name })
+                                          } else if (f) {
+                                            toast({ title: "Error", description: "Please select a PDF file", variant: "destructive" })
+                                          }
+                                        }}
+                                        className="mt-2"
+                                      />
+                                    </div>
+
+                                    {dialogFile && (
+                                      <div className="p-3 rounded bg-background/50 border border-border/50">
+                                        <div className="flex items-center justify-between">
+                                          <div>
+                                            <p className="font-medium">{dialogFile.name}</p>
+                                            <p className="text-xs text-muted-foreground">{(dialogFile.size / 1024 / 1024).toFixed(2)} MB</p>
+                                          </div>
+                                          <div>
+                                            <Button variant="ghost" size="sm" onClick={() => setDialogFile(null)}>Remove</Button>
+                                          </div>
+                                        </div>
+
+                                        {dialogUploading && (
+                                          <div className="mt-2">
+                                            <div className="flex justify-between text-sm">
+                                              <span className="text-muted-foreground">Uploading...</span>
+                                              <span className="text-foreground font-medium">{Math.round(dialogProgress)}%</span>
+                                            </div>
+                                            <div className="w-full bg-background/50 rounded-full h-2 overflow-hidden mt-1">
+                                              <div className="bg-primary h-full rounded-full" style={{ width: `${dialogProgress}%` }} />
+                                            </div>
+                                          </div>
+                                        )}
+                                      </div>
+                                    )}
+                                  </div>
+
+                                  <DialogFooter>
+                                    <div className="flex gap-2">
+                                      <DialogClose>
+                                        <Button variant="ghost">Cancel</Button>
+                                      </DialogClose>
+                                      <Button
+                                        onClick={async () => {
+                                          if (!dialogFile) {
+                                            toast({ title: "Error", description: "Please choose a PDF first", variant: "destructive" })
+                                            return
+                                          }
+                                          setDialogUploading(true)
+                                          setDialogProgress(0)
+                                          let progress = 0
+                                          const interval = setInterval(() => {
+                                            progress += Math.random() * 30
+                                            if (progress > 100) progress = 100
+                                            setDialogProgress(progress)
+                                            if (progress === 100) {
+                                              clearInterval(interval)
+                                              // add to uploaded list
+                                              const maxId = Math.max(0, ...uploadedPDFs.map((p) => p.id), ...libraryPDFs.map((p) => p.id))
+                                              const newPDF: PDFFile = {
+                                                id: maxId + 1,
+                                                name: dialogName || dialogFile.name.replace(/\.pdf$/i, ""),
+                                                size: Number.parseFloat((dialogFile.size / 1024 / 1024).toFixed(2)),
+                                                uploadedAt: new Date().toISOString().split("T")[0],
+                                                pages: Math.floor(Math.random() * 20) + 5,
+                                                status: "ready",
+                                              }
+                                              setUploadedPDFs((prev) => [...prev, newPDF])
+                                              setDialogUploading(false)
+                                              setDialogFile(null)
+                                              setDialogName("")
+                                              setDialogProgress(0)
+                                              setIsDialogOpen(false)
+                                              toast({ title: "Success", description: "PDF uploaded" })
+                                            }
+                                          }, 300)
+                                        }}
+                                        disabled={!dialogFile || dialogUploading}
+                                      >
+                                        {dialogUploading ? "Uploading..." : "Upload"}
+                                      </Button>
+                                    </div>
+                                  </DialogFooter>
+                                </DialogContent>                                              
+                              </Dialog>
+                            </div>
+              {/* Drag and Drop Zone */}
+             
+>>>>>>> d41bb30 (Update: Pdf upload section chaged)
               {/* Selected File Preview */}
               {selectedFile && (
                 <div className="p-4 rounded-lg bg-background/50 border border-border/50 space-y-4">
@@ -435,7 +595,25 @@ export default function PDFManagementPage() {
                       </div>
                     </div>
                     <div className="flex items-center gap-3">
+<<<<<<< HEAD
+<<<<<<< HEAD
                      
+=======
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        onClick={() => {
+                          setUploadedPDFs([...uploadedPDFs, pdf])
+                          toast({ title: "Success", description: "PDF added to chapter" })
+                        }}
+                        className="border-border/50"
+                      >
+                        Add to Chapter
+                      </Button>
+>>>>>>> 12cd839 (feat: initialized ui)
+=======
+                     
+>>>>>>> d41bb30 (Update: Pdf upload section chaged)
                       <Link href={`/teacher/classes/${classId}/chapters/${chapterId}/quiz/generate?pdf=${pdf.id}`}>
                         <Button variant="outline" size="sm" className="border-border/50 bg-transparent">
                           Generate Quiz

@@ -139,3 +139,37 @@ export const togglePublishQuiz = async (req: Request, res: Response) => {
     return res.status(500).json({ error: 'Failed to update quiz status' })
   }
 }
+
+
+export const getAllQuizzes = async (req: Request, res: Response) => {
+  try {
+    const quizzes = await Quiz.find()
+      .select('title status questionCount createdAt pdf')
+      .populate('pdf', 'fileName')  
+      .sort({ createdAt: -1 })
+      .lean()
+
+    const formatted = quizzes.map(quiz => ({
+      quizId: quiz._id.toString(),
+      title: quiz.title,
+      status: quiz.status,
+      questionCount: quiz.questionCount || quiz.questions?.length || 0,
+      pdfName: (quiz.pdf as any)?.fileName || 'Unknown PDF',
+      createdAt: quiz.createdAt,
+      canPublish: quiz.status === 'draft',
+      canUnpublish: quiz.status === 'published',
+    }))
+
+    return res.status(200).json({
+      success: true,
+      count: formatted.length,
+      data: formatted,
+    })
+  } catch (error: any) {
+    console.error('Get all quizzes error:', error)
+    return res.status(500).json({
+      success: false,
+      error: 'Failed to fetch quizzes',
+    })
+  }
+}
