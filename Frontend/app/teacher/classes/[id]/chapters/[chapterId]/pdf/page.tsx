@@ -2,7 +2,8 @@
 
 import type React from "react"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
+import axios from "axios";
 import Link from "next/link"
 import { useParams } from "next/navigation"
 import { Button } from "@/components/ui/button"
@@ -60,6 +61,42 @@ export default function PDFManagementPage() {
     { id: 1, name: "Linear Equations Introduction", size: 2.5, uploadedAt: "2024-01-18", pages: 12, status: "ready" },
     { id: 2, name: "Practice Problems Set 1", size: 1.8, uploadedAt: "2024-01-20", pages: 8, status: "ready" },
   ])
+
+    // Fetch posted PDFs from backend on mount
+    useEffect(() => {
+      let cancelled = false
+
+      const fetchPdfs = async () => {
+        try {
+          const res = await axios.get("http://localhost:5000/getPdfs")
+          if (cancelled) return
+
+          // Expecting array of pdf objects like { fileName, url, pageCount, uploadedAt }
+          const data = Array.isArray(res.data) ? res.data : res.data?.pdfs || []
+
+          const mapped: PDFFile[] = data.map((item: any, idx: number) => ({
+            id: item.pdfId ? Number(item.pdfId) : idx + 1,
+            name: item.fileName ? String(item.fileName).replace(/\.pdf$/i, "") : item.name || `PDF ${idx + 1}`,
+            size: item.size ? Number(item.size) : 0,
+            uploadedAt: item.uploadedAt ? String(item.uploadedAt).split("T")[0] : new Date().toISOString().split("T")[0],
+            pages: item.pageCount ? Number(item.pageCount) : 0,
+            status: "ready",
+          }))
+
+          // If mapped has items, replace the local list
+          if (mapped.length > 0) setUploadedPDFs(mapped)
+        } catch (err: any) {
+          console.error("Failed to fetch PDFs", err)
+          toast({ title: "Error", description: "Could not load PDFs", variant: "destructive" })
+        }
+      }
+
+      fetchPdfs()
+
+      return () => {
+        cancelled = true
+      }
+    }, [])
 
   const [libraryPDFs] = useState<PDFFile[]>([
     { id: 3, name: "Algebra Fundamentals", size: 3.2, uploadedAt: "2024-01-10", pages: 15, status: "ready" },
@@ -195,18 +232,15 @@ export default function PDFManagementPage() {
                                 <DialogContent>
                                   <DialogHeader>
                                     <DialogTitle>Upload PDF</DialogTitle>
-                                    <DialogDescription>Add PDF details and choose a file to upload</DialogDescription>
+                                    <DialogDescription>Choose a file to upload</DialogDescription>
                                   </DialogHeader>
 <<<<<<< HEAD
 
-                                  <div className="space-y-4 pt-2">
-                                    <div>
-                                      <label className="text-sm font-medium text-foreground">PDF Name</label>
-                                      <Input value={dialogName} onChange={(e) => setDialogName(e.target.value)} placeholder="Enter display name" />
-                                    </div>
+                                  <div className="space-y-4 p-1 px-2 cursor-pointer hover:bg-gray-300 border rounded-2xl">
+                                   
 
                                     <div>
-                                      <label className="text-sm font-medium text-foreground">Browse File</label>
+                                      <label className="text-sm font-medium text-foreground  ">Browse Files</label>
                                       <input
                                         type="file"
                                         accept=".pdf"
@@ -297,7 +331,7 @@ export default function PDFManagementPage() {
                                       </Button>
                                     </div>
                                   </DialogFooter>
-                                </DialogContent>
+                                </DialogContent>                                              
                               </Dialog>
                             </div>
               {/* Drag and Drop Zone */}
