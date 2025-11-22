@@ -20,6 +20,7 @@
     "@langchain/community": "^1.0.4",
     "@langchain/core": "^0.3.12",
     "@langchain/google-genai": "^0.0.22",
+    "axios": "^1.13.2",
     "bcryptjs": "^3.0.3",
     "cloudinary": "^2.8.0",
     "cors": "^2.8.5",
