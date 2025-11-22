@@ -152,6 +152,7 @@ export default function ClassDetailPage() {
 
         {/* Quick Actions */}
 <<<<<<< HEAD
+<<<<<<< HEAD
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <Link href={`/teacher/classes/${classId}/invitations`}>
             <Button variant="outline" className="w-full h-20 border-border/50 bg-transparent cursor-pointer">
@@ -160,6 +161,11 @@ export default function ClassDetailPage() {
           <Link href={`/teacher/classes/${classId}/invitations`}>
             <Button variant="outline" className="w-full h-20 border-border/50 bg-transparent">
 >>>>>>> 12cd839 (feat: initialized ui)
+=======
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <Link href={`/teacher/classes/${classId}/invitations`}>
+            <Button variant="outline" className="w-full h-20 border-border/50 bg-transparent cursor-pointer">
+>>>>>>> c2fc869 (designedit: dashboard edited)
               <div className="flex flex-col items-center gap-2">
                 <span className="text-2xl">✉️</span>
                 <span>Manage Invitations</span>
@@ -168,16 +174,21 @@ export default function ClassDetailPage() {
           </Link>
           <Link href={`/teacher/classes/${classId}/chapters`}>
 <<<<<<< HEAD
+<<<<<<< HEAD
             <Button variant="outline" className="w-full h-20 border-border/50 bg-transparent cursor-pointer">
 =======
             <Button variant="outline" className="w-full h-20 border-border/50 bg-transparent">
 >>>>>>> 12cd839 (feat: initialized ui)
+=======
+            <Button variant="outline" className="w-full h-20 border-border/50 bg-transparent cursor-pointer">
+>>>>>>> c2fc869 (designedit: dashboard edited)
               <div className="flex flex-col items-center gap-2">
                 <span className="text-2xl">📚</span>
                 <span>Manage Chapters</span>
               </div>
             </Button>
           </Link>
+<<<<<<< HEAD
 <<<<<<< HEAD
           
           <Link href={`/teacher/classes/${classId}/analytics`}>
@@ -194,6 +205,11 @@ export default function ClassDetailPage() {
           <Link href={`/teacher/classes/${classId}/analytics`}>
             <Button variant="outline" className="w-full h-20 border-border/50 bg-transparent">
 >>>>>>> 12cd839 (feat: initialized ui)
+=======
+          
+          <Link href={`/teacher/classes/${classId}/analytics`}>
+            <Button variant="outline" className="w-full h-20 border-border/50 bg-transparent cursor-pointer">
+>>>>>>> c2fc869 (designedit: dashboard edited)
               <div className="flex flex-col items-center gap-2">
                 <span className="text-2xl">📊</span>
                 <span>View Analytics</span>

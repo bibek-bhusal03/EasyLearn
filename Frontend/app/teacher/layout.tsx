@@ -35,10 +35,14 @@ export default function TeacherLayout({
               </svg>
             </div>
 <<<<<<< HEAD
+<<<<<<< HEAD
             <span className="font-bold text-foreground hidden sm:inline">EasyLearn </span>
 =======
             <span className="font-bold text-foreground hidden sm:inline">EasyLearn AI</span>
 >>>>>>> 12cd839 (feat: initialized ui)
+=======
+            <span className="font-bold text-foreground hidden sm:inline">EasyLearn </span>
+>>>>>>> c2fc869 (designedit: dashboard edited)
           </Link>
 
           {/* Desktop Navigation */}
