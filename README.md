@@ -1,8 +1,5 @@
 # **EasyLearn — Intelligent Quiz Generation & Student Performance Analytics**
 
-[Presentation Link](./screenshots/banner.png)
-![EasyLearn Banner](./screenshots/banner.png)
-
 EasyLearn is an AI-powered learning assistant that helps teachers automatically generate quizzes from PDFs and analyze student performance in real-time. With AI-generated quizzes, intelligent dashboards, and automated insights, EasyLearn helps teachers understand each student’s strengths and weaknesses—something traditional classrooms often struggle to provide.
 
 Developed for the **Provincial Phase Rupandehi — CodeFest 2025**, organized by **Code for Change Rupandehi** on **November 21–22, 2025**.
@@ -96,25 +93,6 @@ TeamLCCElite
 
 ## 📸 **Screenshots**
 
-> Add your screenshots inside the `/screenshots` folder.
-
-| Feature             | Image                                    |
-| ------------------- | ---------------------------------------- |
-| Landing Page        | ![](./screenshots/landing.png)           |
-| Teacher Dashboard   | ![](./screenshots/teacher-dashboard.png) |
-| Quiz Generator      | ![](./screenshots/quiz-generator.png)    |
-| Student Quiz        | ![](./screenshots/student-quiz.png)      |
-| Student Performance | ![](./screenshots/performance.png)       |
-
----
-
-## 🎥 **Demo**
-
-
-App demo
-
-<video controls src="exportVideo2025-11-22 081746.mp4" title="Title"></video>
-
 <details>
 <summary>Student Mobile View (Tap to expand)</summary>
 ![alt text](IMG_0657.png)
@@ -123,10 +101,31 @@ App demo
 
 </details>
 
+<details>
+<summary>Admin Mobile View (Tap to expand)</summary>
 
+![alt text](<./screenshots/Screenshot 2025-11-22 at 09.09.23.png>)
+![alt text](<./screenshots/Screenshot 2025-11-22 at 09.09.43.png>)
 
-Screenshot of Web Platform 
+![alt text](<./screenshots/Screenshot 2025-11-22 at 09.09.46.png>)
+![alt text](<./screenshots/Screenshot 2025-11-22 at 09.09.51.png>)
+![alt text](<./screenshots/Screenshot 2025-11-22 at 09.09.58.png>)
+![alt text](<./screenshots/Screenshot 2025-11-22 at 09.10.42.png>)
 
+</details>
+
+<details>
+<summary> Student View (Tap to expand)</summary>
+![alt text](<./screenshots/Screenshot 2025-11-22 at 09.10.47.png>)
+![alt text](<./screenshots/Screenshot 2025-11-22 at 09.10.50.png>)
+![alt text](<./screenshots/Screenshot 2025-11-22 at 09.10.53.png>)
+</details>
+
+## 🎥 **Demo**
+
+App demo
+
+<video controls src="./screenshots/exportVideo2025-11-22 081746.mp4" title="Title"></video>
 
 ### **🔗 Live Demo (Frontend)**
 
@@ -134,9 +133,9 @@ Screenshot of Web Platform
 
 ---
 
-Canva link : https://www.canva.com/design/DAG5Fok3S0w/o8kL4BLZsiuWnDZrlNeh4g/edit?utm_content=DAG5Fok3S0w&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
+### **🔗 Presentation Link**
 
-
+https://www.canva.com/design/DAG5Fok3S0w/o8kL4BLZsiuWnDZrlNeh4g/edit?utm_content=DAG5Fok3S0w&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
 
 ## 🧠 **Tech Stack**
 
@@ -206,9 +205,12 @@ Organized by **Code for Change Rupandehi**
 
 ---
 
-## 📦 **Getting Started**
+## 📦 **How to run**
 
 ### **1. Clone the Repository**
+
+- [Download ZIP](https://github.com/bibek-bhusal03/EasyLearn/archive/refs/heads/main.zip), or
+- Clone with Git:
 
 ```bash
 git clone https://github.com/TeamLCCElite/EasyLearn.git
@@ -231,9 +233,23 @@ Backend
 
 ```bash
 cd backend
-npm install
+npm install --legacy-peer-deps
 npm run dev
 
+```
+
+- Note: Create .env file in backend folder with the following:
+
+```
+PORT=5000
+JWT_SECRET=super_strong_secret_change_in_production_12345
+DATABASE_URL=
+# Cloudinary (get from https://cloudinary.com/console)
+CLOUDINARY_CLOUD_NAME=
+CLOUDINARY_API_KEY=
+CLOUDINARY_API_SECRET=
+
+GEMINI_API_KEY=
 ```
 
 Expo App
