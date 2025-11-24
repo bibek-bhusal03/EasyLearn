@@ -95,30 +95,35 @@ TeamLCCElite
 
 <details>
 <summary>Student Mobile View (Tap to expand)</summary>
-![alt text](IMG_0657.png)
 
-![alt text](IMG_0663.png) ![alt text](IMG_0658.png) ![alt text](IMG_0659.png) ![alt text](IMG_0660.png) ![alt text](IMG_0661.png) ![alt text](IMG_0662.png)
-
-</details>
-
-<details>
-<summary>Admin Mobile View (Tap to expand)</summary>
-
-![alt text](<./screenshots/Screenshot 2025-11-22 at 09.09.23.png>)
-![alt text](<./screenshots/Screenshot 2025-11-22 at 09.09.43.png>)
-
-![alt text](<./screenshots/Screenshot 2025-11-22 at 09.09.46.png>)
-![alt text](<./screenshots/Screenshot 2025-11-22 at 09.09.51.png>)
-![alt text](<./screenshots/Screenshot 2025-11-22 at 09.09.58.png>)
-![alt text](<./screenshots/Screenshot 2025-11-22 at 09.10.42.png>)
+![alt text](screenshots/IMG_0657.png)
+![alt text](screenshots/IMG_0663.png)
+![alt text](screenshots/IMG_0658.png)
+![alt text](screenshots/IMG_0659.png)
+![alt text](screenshots/IMG_0660.png)
+![alt text](screenshots/IMG_0661.png)
+![alt text](screenshots/IMG_0662.png)
 
 </details>
 
 <details>
-<summary> Student View (Tap to expand)</summary>
-![alt text](<./screenshots/Screenshot 2025-11-22 at 09.10.47.png>)
-![alt text](<./screenshots/Screenshot 2025-11-22 at 09.10.50.png>)
-![alt text](<./screenshots/Screenshot 2025-11-22 at 09.10.53.png>)
+<summary>Admin View (Tap to expand)</summary>
+
+![alt text](<screenshots/Screenshot 2025-11-22 at 08.43.11.png>)
+![alt text](<screenshots/Screenshot 2025-11-22 at 08.43.19.png>)
+![alt text](<screenshots/Screenshot 2025-11-22 at 08.43.26.png>)
+![alt text](<screenshots/Screenshot 2025-11-22 at 08.43.35.png>)
+
+</details>
+
+<details>
+<summary>Teacher View (Tap to expand)</summary>
+
+![alt text](<screenshots/Screenshot 2025-11-22 at 08.45.30.png>)
+![alt text](<screenshots/Screenshot 2025-11-22 at 08.44.16.png>)
+![alt text](<screenshots/Screenshot 2025-11-22 at 08.44.22.png>)
+![alt text](<screenshots/Screenshot 2025-11-22 at 08.44.32.png>)
+
 </details>
 
 ## 🎥 **Demo**
@@ -135,7 +140,7 @@ App demo
 
 ### **🔗 Presentation Link**
 
-https://www.canva.com/design/DAG5Fok3S0w/o8kL4BLZsiuWnDZrlNeh4g/edit?utm_content=DAG5Fok3S0w&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
+- [Click Here to View](https://www.canva.com/design/DAG5Fok3S0w/o8kL4BLZsiuWnDZrlNeh4g/edit?utm_content=DAG5Fok3S0w&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
 
 ## 🧠 **Tech Stack**
 
