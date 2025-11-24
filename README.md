@@ -115,12 +115,13 @@ App demo
 
 <video controls src="exportVideo2025-11-22 081746.mp4" title="Title"></video>
 
-Project ss of APP ( STUDEND SIDE )
-
-
+<details>
+<summary>Student Mobile View (Tap to expand)</summary>
 ![alt text](IMG_0657.png)
 
 ![alt text](IMG_0663.png) ![alt text](IMG_0658.png) ![alt text](IMG_0659.png) ![alt text](IMG_0660.png) ![alt text](IMG_0661.png) ![alt text](IMG_0662.png)
+
+</details>
 
 
 
